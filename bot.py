@@ -60,19 +60,19 @@ class Chat:
         self.message_id = msg['message_id']
 
         self.messages = {
-            'start':'🤖 Hello, '+ self.user_name +'!\n\n'
-                    '📩 Send me:\n\n'
-                    '"*/music* _song name_"  or\n'
-                    '"*/music* _musician name - song name_"\n\n'
+            'start':'🤖 Hello My Name Is MHSDBoT , Your Self, '+ self.user_name +'!\n\n'
+                    '✨ Send Me This Like 👇:\n\n'
+                    '"💞 */Music* - Song Name"  or\n'
+                    '"💕 */Music* - Song Name or Musician Name"\n\n'
                     'to order some music. 🎶',
             
-            'spotify_input_error':"‼️ *Oops! The bot doesn't support Spotify links!*\n"
-                    'Try: "*/music* _song name_"\n'
-                    'or: "*/music* _musician name - song name_"',
+            'spotify_input_error':"‼️ *Oops! The bot doesn't support Spotify links or other Invalid Link any issue Support Group : @MHGcHaT!*\n"
+                    'Try: "💞 */Music* - Song Name"\n'
+                    'or: "💕 */Music* - Song Name or Musician Name"',
 
             'invalid_command':'‼️ *Oops! Invalid command!*\n'
-                    'Try: "*/music* _song name_"\n'
-                    'or: "*/music* _musician name - song name_"',
+                    'Try: "💞 /Music - Song Name"\n'
+                    'or: "💕 */Music* - Song Name or Musician Name"',
 
             'too_long':'‼️ *Oops! Video too long to convert!*\n'
                     'Order something 30 minutes or less.'
@@ -105,7 +105,7 @@ class Chat:
         min_duration, split_count = Music.get_duration(self, result)
 
         if int(min_duration) < 30 and split_count < 3:
-            file_name = Music.get_title(self, result) +' - @TLMusicDownloader_bot '+str(randint(0,999999))+'.mp3'
+            file_name = Music.get_title(self, result) +' - @MHSDBoT '+str(randint(0,999999))+'.mp3'
             file_name = file_name.replace('"', '')
 
             self.send_message(f"🎵 {Music.get_title(self, result)}\n🔗 {Music.get_link(self, result)}")
